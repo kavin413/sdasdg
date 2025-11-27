@@ -1,18 +1,31 @@
-import random
-import string
+import tkinter as tk
+from tkinter import messagebox
 
-def generate_password(length):
-    characters = string.ascii_letters + string.digits + string.punctuation
-    password = ''.join(random.choice(characters) for i in range(length))
-    return password
-
-if __name__ == "__main__":
+def multiply_numbers():
     try:
-        password_length = int(input("Enter the desired password length: "))
-        if password_length <= 0:
-            print("Password length must be a positive integer.")
-        else:
-            new_password = generate_password(password_length)
-            print(f"Generated password: {new_password}")
+        num1 = float(entry_num1.get())  
+        num2 = float(entry_num2.get()
+        result = num1 * num2
+        result_label.config(text=f"Result: {result}") 
     except ValueError:
-        print("Invalid input. Please enter an integer for the password length.")
+        messagebox.showerror("Input Error", "Please enter valid numbers.") 
+
+root = tk.Tk()
+root.title("Multiplication App")
+label_num1 = tk.Label(root, text="Enter first number:")
+label_num1.pack(pady=5)
+entry_num1 = tk.Entry(root)
+entry_num1.pack(pady=5)
+
+label_num2 = tk.Label(root, text="Enter second number:")
+label_num2.pack(pady=5)
+entry_num2 = tk.Entry(root)
+multiply_button = tk.Button(root, text="Multiply", command=multiply_numbers)
+multiply_button.pack(pady=10)
+
+# Create a label to display the result
+result_label = tk.Label(root, text="Result: ")
+result_label.pack(pady=5)
+
+# Start the Tkinter event loop
+root.mainloop()
