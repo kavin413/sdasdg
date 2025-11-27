@@ -1,10 +1,6 @@
-import turtle
-t = turtle.Turtle()
-
-side_length = 100
-
-for _ in range(4):
-  t.forward(side_length)
-
-turtle.done()
-
+class StringReverser:
+    def reverse_words(self, input_string: str) -> str:
+        
+        words = input_string.split()  
+        reversed_words = words[::-1]  
+        return " ".join(reversed_words) 
