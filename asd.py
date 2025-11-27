@@ -1,3 +1,6 @@
-matrix = [[1, 2], [3, 4], [5, 6]]
-flat_list = [item for sublist in matrix for item in sublist]
-print(flat_list)
+import calendar
+
+print("List of all months:")
+for i in range(1, 13):
+ 
+    print(calendar.month_name[i]) 
